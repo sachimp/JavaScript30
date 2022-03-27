@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url('./background.jpg') bottom center;
+  background: url('./sachin-background.jpg') bottom center;
   background-size: cover;
 }
 
@@ -13,9 +13,20 @@ body,html {
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 95vh;
   align-items: center;
   justify-content: center;
+}
+
+.yee {
+  display: flex;
+  align-items: center;
+}
+
+.easter-egg {
+  font-size: 12px;
+  color: #ffc600;
+  text-shadow: 1px 1px white;
 }
 
 .key {
@@ -41,6 +52,10 @@ body,html {
 kbd {
   display: block;
   font-size: 4rem;
+}
+
+.yee kbd {
+  font-size: 2rem;
 }
 
 .sound {
