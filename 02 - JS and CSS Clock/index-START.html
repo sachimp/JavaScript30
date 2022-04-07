@@ -15,13 +15,14 @@
 
     <div class="digital-clock">
       <div class="digital digital-hours">
-        1
       </div>
       <div class="digital digital-minutes">
-        1
       </div>
       <div class="digital digital-seconds">
-        1
+   
+      </div>
+      <div class="digital am-pm">
+        am
       </div>
     </div>
 
@@ -77,13 +78,13 @@
     }
 
     .digital-clock {
-      border: 20px solid white;
+      border: 10px solid white;
       display: flex;
 
     }
 
     .digital {
-      border: 5px solid white;
+      border: 1px solid white;
       flex-grow: 1;
       color: white;
       padding: 20px;
@@ -98,6 +99,7 @@
   const digiSecond = document.querySelector('.digital-seconds')
   const digiMin = document.querySelector('.digital-minutes')
   const digiHour = document.querySelector('.digital-hours')
+  const amPm = document.querySelector('.am-pm')
 
   function setDate() {
     const now = new Date();
@@ -116,8 +118,11 @@
     const hour = now.getHours();
     const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-    digiHour.innerHTML = hours
+    digiHour.innerHTML = hour
 
+    // const suffix = hour <= 12 ? "PM":"AM"; hour = ((hour + 11) % 12 + 1) + suffix
+
+    // console.log(suffix)
   }
 
   setInterval(setDate, 1000);
