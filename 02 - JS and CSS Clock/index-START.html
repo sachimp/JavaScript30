@@ -5,8 +5,6 @@
   <title>JS + CSS Clock</title>
 </head>
 <body>
-
-
     <div class="clock">
       <div class="clock-face">
         <div class="hand hour-hand"></div>
@@ -15,9 +13,17 @@
       </div>
     </div>
 
-  <div>
-    
-  </div>
+    <div class="digital-clock">
+      <div class="digital digital-hours">
+        <p>1</p>
+      </div>
+      <div class="digital digital-minutes">
+        <p>1</p>
+      </div>
+      <div class="digital digital-seconds">
+        <p>1</p>
+      </div>
+    </div>
 
   <style>
     html {
@@ -31,7 +37,6 @@
     body {
       margin: 0;
       font-size: 2rem;
-      display: flex;
       flex: 1;
       min-height: 100vh;
       align-items: center;
@@ -70,12 +75,27 @@
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
+
+    .digital-clock {
+      border: 20px solid white;
+      display: flex;
+
+    }
+
+    .digital {
+      border: 5px solid white;
+      flex-grow: 1;
+    }
+
 </style>
 
 <script>
   const secondHand = document.querySelector('.second-hand');
   const minsHand = document.querySelector('.min-hand');
   const hourHand = document.querySelector('.hour-hand');
+  const digiSecond = document.querySelector('.digital-hours')
+  const digiMin = document.querySelector('.digital-minutes')
+  const digiHour = document.querySelector('.digital-seconds')
 
   function setDate() {
     const now = new Date();
